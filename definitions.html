@@ -1,0 +1,81 @@
+{<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Identity Experience</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+        }
+        .identity-card {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #000;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Create Your Virtual Identity Card</h2>
+        <label>Gender Identity:</label>
+        <select id="gender">
+            <option value="Non-binary">Non-binary</option>
+            <option value="Transgender Male">Transgender Male</option>
+            <option value="Transgender Female">Transgender Female</option>
+            <option value="Genderqueer">Genderqueer</option>
+        </select>
+        <br><br>
+        <label>Pronouns:</label>
+        <select id="pronouns">
+            <option value="They/Them">They/Them</option>
+            <option value="He/Him">He/Him</option>
+            <option value="She/Her">She/Her</option>
+        </select>
+        <br><br>
+        <label>Fashion Style:</label>
+        <select id="fashion">
+            <option value="Androgynous">Androgynous</option>
+            <option value="Casual">Casual</option>
+            <option value="Formal">Formal</option>
+            <option value="Streetwear">Streetwear</option>
+        </select>
+        <br><br>
+        <button onclick="generateIdentity()">Generate Identity Card</button>
+        
+        <div class="identity-card" id="identityCard" style="display:none;">
+            <h3>Your Identity Card</h3>
+            <p><strong>Gender Identity:</strong> <span id="displayGender"></span></p>
+            <p><strong>Pronouns:</strong> <span id="displayPronouns"></span></p>
+            <p><strong>Fashion Style:</strong> <span id="displayFashion"></span></p>
+        </div>
+    </div>
+
+    <script>
+        function generateIdentity() {
+            const gender = document.getElementById("gender").value;
+            const pronouns = document.getElementById("pronouns").value;
+            const fashion = document.getElementById("fashion").value;
+
+            document.getElementById("displayGender").innerText = gender;
+            document.getElementById("displayPronouns").innerText = pronouns;
+            document.getElementById("displayFashion").innerText = fashion;
+            
+            document.getElementById("identityCard").style.display = "block";
+        }
+    </script>
+</body>
+</html>
+}
